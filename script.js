@@ -17,7 +17,6 @@ function parseText(text) {
       newValue: newProps[propName]
     })
   }
-  console.log(listedProps, newProps, prevProps);
   return allDiffs;
 }
 
@@ -31,6 +30,10 @@ function addCellToRow(row, text) {
   cell.innerHTML = `<pre>${text}</pre>`;
 }
 
+function setNoDiffRow(table, text) {
+  table.innerHTML = `<tr><td colspan="3" class="no-results">${text}</td></tr>`;
+}
+
 function handleTerraformPlanChanged(event) {
   const allProps = parseText(event.target.value);
   const diffProps = allProps.filter(x => x.oldValue != x.newValue);
@@ -40,9 +43,9 @@ function handleTerraformPlanChanged(event) {
     diffProps.forEach(({name, oldValue, newValue}) => addRowToTable(resultsTableBody, [name, oldValue, newValue]))
   }
   else if (allProps.length) {
-    resultsTableBody.innerHTML = '<tr><td colspan="3" class="no-results">No diffs found</td></tr>';
+    setNoDiffRow(resultsTableBody, `Valid plan entered (${allProps.length} props found), but no differences found`);
   } else {
-    resultsTableBody.innerHTML = '<tr><td colspan="3" class="no-results">Please enter a valid TF plan</td></tr>';
+    setNoDiffRow(resultsTableBody, 'Please enter a valid TF plan');
   }
 }
 
