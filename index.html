@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+  <title>EB Diffs Checker</title>
+  <link rel="SHORTCUT ICON" href="favicon.png" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <meta name="author" content="Lionel Luchez" />
+  <meta name="robots" content="index,follow"/>
+  <link rel="stylesheet" type="text/css" media="all" href="styles.css" />
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="layout">
+      <h1 class="title">Terraform Plan - ElasticBeanstalk Differences Checker</h1>
+      <textarea
+        class="text-input"
+        id="diffs"
+        placeholder="Enter your TF plan here..."
+      ></textarea>
+      <div class="summary">
+        <h2>Differences</h2>
+        <table id="results">
+          <thead>
+            <th>Name</th>
+            <th>Old Value</th>
+            <th>New Value</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

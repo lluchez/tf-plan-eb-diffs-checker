@@ -1,0 +1,107 @@
+/** ------ Reset ------ */
+*, *::before, *::after {
+  box-sizing: border-box; /* Use a more-intuitive box-sizing model. 8*/
+}
+* {
+  margin: 0; /* Remove default margin */
+}
+html, body {
+  height: 100%; /* Allow percentage-based heights in the application */
+}
+body { /* Typographic tweaks! */
+  line-height: 1.2; /* Add accessible line-height */
+  -webkit-font-smoothing: antialiased; /* Improve text rendering */
+}
+img, picture, video, canvas, svg { /* Improve media defaults */
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit; /* Remove built-in form typography styles */
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; /* Avoid text overflows */
+}
+#root, #__next {
+  isolation: isolate; /* Create a root stacking context */
+}
+
+pre, code, kbd {
+  font-family: monospace, monospace;
+  font-size: 0.8rem;
+}
+
+/** ------ Reset ------ */
+
+html {
+  background-color: #F0F0F0;
+  font-family: sans-serif;
+  color: #33a0c6;
+}
+
+.container {
+  padding: 1em;
+  height: 100%;
+}
+
+.layout {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template:
+    "title title" min-content
+    "text results" 1fr
+      / min-content 1fr;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+  line-height: 50px;
+}
+
+textarea.text-input {
+  grid-area: text;
+  min-width: 300px;
+  /*min-height: 100%;
+  max-height: 100%;*/
+  color: #33a0c6;
+  border-color: #33a0c6;
+  resize: horizontal;
+  padding: 6px;
+}
+
+textarea.text-input:focus {
+  outline: none;
+}
+
+.summary {
+  grid-area: results;
+  padding: 1em;
+  border: 1px solid #33a0c6;
+}
+
+table#results {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table#results td, table#results th {
+  padding: 2px 6px;
+  border: 1px solid #333;
+}
+
+table#results th {
+  background-color: #33a0c6;
+  color: white;
+  font-weight: bold;
+}
+
+table#results td {
+  background-color: white;
+}
+
+table#results td.no-results {
+  text-align: center;
+  font-style: italic;
+}
